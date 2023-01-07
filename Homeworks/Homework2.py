@@ -30,6 +30,15 @@ print(sum_num)
 #       sum_num += int(i)
 # print(sum_num)
 
+Второй вариант решения (ревьюер предложил после проверки):
+
+Number = input("Введите вещественное число: ")
+sum = 0
+for i in Number:
+    if i.isdigit():
+    sum += int(i)
+print(sum)
+
 
 '''
 
