@@ -33,7 +33,7 @@ def random_list(num):   # Перегрузил функцию лишней ин�
                     '3245', 'jsen', 'mrbns', 'jgbns', 'jfvas',
                     'chahf', 'afvsf3', '425navva', 'lfvahfvahf',
                     'a', 'xqtmq', 'urq', 'uuq', '2u3']
-        lst_1 = random.choices(rand_lst, int(num))
+        lst_1 = random.choices(rand_lst, k = int(num))
         return lst_1
 
 
@@ -45,6 +45,13 @@ def sum_items_odd_position(lst_1):
         i += 2
     return item_sum
 
+# вариант функции предложенный ревьюером:
+
+# def sum_items_odd_position(lst_1):
+#     item_sum = 0
+#     for i in range(1, len(lst_1),2):
+#         item_sum += lst_1[i]
+#     return item_sum
 
 '''
 num = int(input('input a positive integer: '))
@@ -75,6 +82,19 @@ def product_pairs_of_numbers(lst_1):
         j -= 1
         size -= 1
     return result
+
+# вариант цикла предложенный ревьюером:
+
+# def product_pairs_of_numbers(lst_1):
+#     i = 0
+#     size = len(lst_1) - 1
+#     result = []
+#     while i <= size:
+#         result += str(lst_1[i] * lst_1[-1-i])
+#         i += 1
+#         size -= 1
+#     return result
+
 
 
 '''
