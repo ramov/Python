@@ -22,7 +22,7 @@ def random_list(num):   # Перегрузил функцию лишней ин�
     elif type(num) == float:  # Floating
         lst_1 = []
         for _ in range(int(num)):
-            lst_1 += str(random.uniform(0, num))
+            lst_1.append(str(random.uniform(0, num)))
         return lst_1
     elif type(num) == str:  # String Добавил как эксперемент)))
         rand_lst = ['asda', 'sad', 'fho', 'hf', 'asfa', 'shf',
@@ -36,6 +36,11 @@ def random_list(num):   # Перегрузил функцию лишней ин�
         lst_1 = random.choices(rand_lst, k = int(num))
         return lst_1
 
+if __name__ == "__main__":  
+    main()
+
+# import Homework3 as h3    # вызов функции
+# print(h3.random_list(5))
 
 def sum_items_odd_position(lst_1):
     i = 1
@@ -52,6 +57,17 @@ def sum_items_odd_position(lst_1):
 #     for i in range(1, len(lst_1),2):
 #         item_sum += lst_1[i]
 #     return item_sum
+
+# вариант решения предложенный преподавателем:
+
+# import random as rand
+# l = int(input('Введите длину списка: '))
+# ls = [rand.randint(1,50) for i in range(l)]
+# new_ls = ls[1:l:2]
+# sum_nefw_ls = sum(new_ls)
+# print(ls)
+# print(new_ls)
+# print(f'Сумма чисел на нечетных позициях равна: {sum_nefw_ls }')
 
 '''
 num = int(input('input a positive integer: '))
@@ -95,7 +111,18 @@ def product_pairs_of_numbers(lst_1):
 #         size -= 1
 #     return result
 
+# Вариант предложенный преподавателем:
 
+# from math import ceil
+# a = []
+# len_ls = int(input('Введите длину списка: '))
+# for i in range(len_ls):
+# a.append(int(input(f'Введите {i + 1} число: ')))
+# print(a)
+# newArr = []
+# for j in range(ceil(len_ls / 2)):
+# newArr.append(a[j] * a[-j - 1])
+# print(newArr)
 
 '''
 num = int(input('input a positive integer: '))
@@ -199,6 +226,8 @@ print(bi_num)
 
 # - для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
 
+
+'''
 def fibonacci(num):
     if num > 0:
         lst_1 = [0]
@@ -227,3 +256,5 @@ def fibonacci(num):
 
 num = int(input('input a integer: '))
 fibonacci(num)
+
+# '''
