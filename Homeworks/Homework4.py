@@ -103,7 +103,6 @@ def random_list_of_polynomials(k):
 
 
 k = int(input('Input the naturaal degree: '))
-# random_list_of_polynomials(k)
 with open('homework4.txt', 'w') as file:
     for i in (random_list_of_polynomials(k)):
         file.write(i)
