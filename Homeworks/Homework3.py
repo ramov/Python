@@ -17,7 +17,7 @@ def random_list(num):   # Перегрузил функцию лишней ин�
         lst_1 = []
         for _ in range(num):
             # для простоты проверки, привязал максимальное значение рандома к запрашиваемому числу.
-            lst_1 += str(random.randint(0, num))
+            lst_1.append(random.randint(0, num))
         return lst_1
     elif type(num) == float:  # Floating
         lst_1 = []

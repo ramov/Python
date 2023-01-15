@@ -7,7 +7,7 @@ data = open('file.txt', 'w')
 data.writelines(colors) # разделителей не будет
 data.close()
 
-exit() #Повзоляет не выполнять код, который дальше прописан
+# exit() #Повзоляет не выполнять код, который дальше прописан
 
 path = 'file.txt'
 data = open(path, 'r')
@@ -19,10 +19,10 @@ data.close()
 # ФУНКЦИИ
 
 def function_name(x):
-body line 1
-. . .
-body line n
-optional return
+    body line 1
+    . . .
+    body line n
+    optional return
 
 
 new file function_file.py file hello.py
