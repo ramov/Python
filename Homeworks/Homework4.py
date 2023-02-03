@@ -102,15 +102,66 @@ def random_list_of_polynomials(k):
     return lst
 
 
-k = int(input('Input the naturaal degree: '))
-with open('homework4.txt', 'w') as file:
-    for i in (random_list_of_polynomials(k)):
-        file.write(i)
+# k = int(input('Input the naturaal degree: '))
+# with open('homework4.txt', 'w') as file:
+#     for i in (random_list_of_polynomials(k)):
+#         file.write(i)
 
 
 # ===== Задание 5:
 # Даны два файла, в каждом из которых находится запись многочлена. 
 # Задача - сформировать файл, содержащий сумму многочленов.
 
+lst_f1 = ''
+lst_f2 = ''
+with open('file_1.txt', 'r') as f1:
+    lst_f1 = str(*f1.readlines())
+with open('file_2.txt', 'r') as f2:
+    lst_f2 = str(*f2.readlines())
 
+print(lst_f1)
+print(lst_f2)
 
+lst_f1 = lst_f1.replace(' ', '')
+lst_f1 = lst_f1[:lst_f1.find('=')].split('+')
+lst_f2 = lst_f2.replace(' ', '')
+lst_f2 = lst_f2[:lst_f2.find('=')].split('+')
+num_all = lst_f1 + lst_f2
+
+my_dict = {}
+
+for elem in num_all:
+    if 'x' not in elem:
+        key = 0
+    elif '^' not in elem:
+        key = 1
+    else:
+        key = int(elem[elem.find('^') + 1:])
+        
+    if key > 0:
+        if key in my_dict:
+            my_dict[key] += int(elem[:elem.find('x')])
+        else:
+            my_dict[key] = int(elem[:elem.find('x')])
+    else:
+        if key in my_dict:
+            my_dict[0] += int(elem)
+        else:
+            my_dict[0] = int(elem) 
+
+my_str = '' 
+for key, value in sorted(my_dict.items(),reverse=True):
+    if key == 0:
+        my_str += str(value)
+    elif key == 1:
+        my_str += f'{value}*x + '
+    else:
+        my_str += f'{value}*x^{key} + '
+    
+my_str = my_str + ' = 0'
+
+print(my_str)
+
+with open('homework4.txt', 'w') as result:
+    for el in (my_str):
+        result.write(el)
