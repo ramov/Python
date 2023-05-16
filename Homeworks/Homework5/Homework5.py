@@ -175,7 +175,6 @@ def main():
             break
         counter += 1
 
-
 main()
 
 # Задача 4:
